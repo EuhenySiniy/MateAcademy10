@@ -16,7 +16,7 @@ import java.util.Set;
 public class FormatingToXml {
     private static final Logger LOGGER = Logger.getLogger(FormatingToXml.class);
 
-    public void collectionInitialization() {
+    public void initializeCollection () {
         List<Map<List<Set<Integer>>, String>> list = new ArrayList<>();
         Integer value = 10;
         Set<Integer> set = new HashSet<>(value);
@@ -27,7 +27,7 @@ public class FormatingToXml {
         list.add(map);
     }
 
-    public void conversion(List list) {
+    public void convertToXml(List list) {
         try(FileOutputStream xmlFile = new FileOutputStream("list.xml")) {
             XMLEncoder xmlEncoder = new XMLEncoder(xmlFile);
             xmlEncoder.writeObject(list);
